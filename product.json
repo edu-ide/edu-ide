@@ -30,6 +30,11 @@
 	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
 	"nodejsRepository": "https://nodejs.org",
 	"urlProtocol": "code-oss",
+	"extensionsGallery": {
+		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
+		"itemUrl": "https://marketplace.visualstudio.com/items"
+	},
 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/ef65ac1ba57f57f2a3961bfe94aa20481caca4c6/out/vs/workbench/contrib/webview/browser/pre/",
 	"builtInExtensions": [
 		{
@@ -79,6 +84,16 @@
 				},
 				"publisherDisplayName": "Microsoft"
 			}
+		},
+		{
+			"name": "ms-ceintl.vscode-language-pack-ko",
+			"identifier": {
+				"id": "ms-ceintl.vscode-language-pack-ko"
+			},
+			"version": "1.97.2024122509",
+			"source": "marketplace"
 		}
+
+
 	]
 }
