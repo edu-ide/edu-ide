@@ -1,0 +1,25 @@
+{
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.startupEditor": "none",
+  "locale": "ko",
+  "workbench.settings.editor": "ui",
+  "workbench.settings.openDefaultSettings": true,
+  "workbench.views.customViews": {
+    "type": "object",
+    "default": {
+      "chat-sidebar": {
+        "id": "chat-sidebar",
+        "name": "Chat",
+        "icon": "$(comment-discussion)",
+        "contextualTitle": "Chat Panel",
+        "order": 7
+      }
+    }
+  }
+} 
