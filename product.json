@@ -92,8 +92,41 @@
 			},
 			"version": "1.97.2024122509",
 			"source": "marketplace"
+		},
+		{
+			"name": "github.copilot-chat",
+			"identifier": {
+				"id": "github.copilot-chat"
+			},
+			"version": "0.24.2024122001",
+			"source": "marketplace"
+		},
+		{
+			"name": "github.copilot", 
+			"identifier": {
+				"id": "github.copilot"
+			},
+			"version": "1.254.1278",
+			"source": "marketplace"
+		},
+		{
+			"name": "github.copilot", 
+			"identifier": {
+				"id": "github.copilot"
+			},
+			"version": "1.254.1278", 
+			"source": "marketplace"
+		},
+		{
+			"name": "mhutchie.git-graph",
+			"identifier": {
+				"id": "mhutchie.git-graph"
+			},
+			"version": "1.30.0",
+			"source": "marketplace"
 		}
 
 
-	]
+	],
+	"locale": "ko"
 }
