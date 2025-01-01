@@ -235,5 +235,16 @@
   },
   "optionalDependencies": {
     "windows-foreground-love": "0.5.0"
+  },
+  "contributes": {
+    "views": {
+      "accounts": [
+        {
+          "id": "workbench.views.customAccounts",
+          "name": "Custom Accounts",
+          "when": "true"
+        }
+      ]
+    }
   }
 }

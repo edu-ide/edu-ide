@@ -102,19 +102,11 @@
 			"source": "marketplace"
 		},
 		{
-			"name": "github.copilot", 
+			"name": "saoudrizwan.claude-dev",
 			"identifier": {
-				"id": "github.copilot"
+				"id": "anthropic.claude-dev"
 			},
-			"version": "1.254.1278",
-			"source": "marketplace"
-		},
-		{
-			"name": "github.copilot", 
-			"identifier": {
-				"id": "github.copilot"
-			},
-			"version": "1.254.1278", 
+			"version": "3.0.12",
 			"source": "marketplace"
 		},
 		{
