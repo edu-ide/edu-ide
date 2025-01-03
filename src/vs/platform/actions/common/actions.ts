@@ -49,7 +49,7 @@ export function isISubmenuItem(item: any): item is ISubmenuItem {
 export class MenuId {
 
 	private static readonly _instances = new Map<string, MenuId>();
-	static readonly CodestoryAccountMenu = new MenuId('CodestoryAccountMenu');
+	static readonly CodestoryAccountMenu = new MenuId('codestoryAccountMenu');
 	static readonly CommandPalette = new MenuId('CommandPalette');
 	static readonly DebugBreakpointsContext = new MenuId('DebugBreakpointsContext');
 	static readonly DebugCallStackContext = new MenuId('DebugCallStackContext');

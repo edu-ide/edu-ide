@@ -26,6 +26,7 @@ import './browser/actions/workspaceActions.js';
 import './browser/actions/workspaceCommands.js';
 import './browser/actions/quickAccessActions.js';
 import './browser/actions/widgetNavigationCommands.js';
+import './browser/actions/csAccountActions.js';
 
 //#endregion
 
@@ -162,7 +163,7 @@ registerSingleton(IContextKeyService, ContextKeyService, InstantiationType.Delay
 registerSingleton(ITextResourceConfigurationService, TextResourceConfigurationService, InstantiationType.Delayed);
 registerSingleton(IDownloadService, DownloadService, InstantiationType.Delayed);
 registerSingleton(IOpenerService, OpenerService, InstantiationType.Delayed);
-
+registerSingleton(ICSAccountService, CSAccountService, InstantiationType.Delayed);
 //#endregion
 
 
@@ -402,6 +403,8 @@ import './contrib/inlineCompletions/browser/inlineCompletions.contribution.js';
 // Drop or paste into
 import './contrib/dropOrPasteInto/browser/dropOrPasteInto.contribution.js';
 import { AllowedExtensionsService } from '../platform/extensionManagement/common/allowedExtensionsService.js';
+import { CSAccountService } from '../platform/codestoryAccount/browser/csAccount.js';
+import { ICSAccountService } from '../platform/codestoryAccount/common/csAccount.js';
 
 
 //#endregion
