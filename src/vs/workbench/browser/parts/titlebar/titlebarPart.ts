@@ -437,7 +437,8 @@ export class BrowserTitlebarPart extends Part implements ITitlebarPart {
 	registerVariables(variables: ITitleVariable[]): void {
 		this.windowTitle.registerVariables(variables);
 	}
-private createCodestoryAccountActionToolBar() {
+	private createCodestoryAccountActionToolBar() {
+	
 		this.codestoryAccountActionToolBarDisposable.clear();
 
 		this.codestoryAccountActionToolBar = this.codestoryAccountActionToolBarDisposable.add(this.instantiationService.createInstance(WorkbenchToolBar, this.codestoryAccountActionToolBarElement, {

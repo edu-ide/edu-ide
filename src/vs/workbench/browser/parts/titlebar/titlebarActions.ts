@@ -15,9 +15,7 @@ import { IAction } from '../../../../base/common/actions.js';
 import { IsAuxiliaryWindowFocusedContext, IsMainWindowFullscreenContext, TitleBarStyleContext, TitleBarVisibleContext } from '../../../common/contextkeys.js';
 import { CustomTitleBarVisibility, TitleBarSetting, TitlebarStyle } from '../../../../platform/window/common/window.js';
 import { isLinux, isNative } from '../../../../base/common/platform.js';
-import { CS_ACCOUNT_CARD_VISIBLE } from '../../../../platform/codestoryAccount/common/csAccountContextKeys.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { ICSAccountService } from '../../../../platform/codestoryAccount/common/csAccount.js';
+
 
 // --- Context Menu Actions --- //
 
