@@ -27,6 +27,7 @@ import { IEditorGroupsContainer, IEditorGroupsService } from '../../../services/
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
 import { CodeWindow, mainWindow } from '../../../../base/browser/window.js';
+import { ILogService } from '../../../../platform/log/common/log.js';
 
 export class NativeTitlebarPart extends BrowserTitlebarPart {
 
@@ -74,9 +75,10 @@ export class NativeTitlebarPart extends BrowserTitlebarPart {
 		@IEditorGroupsService editorGroupService: IEditorGroupsService,
 		@IEditorService editorService: IEditorService,
 		@IMenuService menuService: IMenuService,
-		@IKeybindingService keybindingService: IKeybindingService
+		@IKeybindingService keybindingService: IKeybindingService,
+		@ILogService logService: ILogService
 	) {
-		super(id, targetWindow, editorGroupsContainer, contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, editorGroupService, editorService, menuService, keybindingService);
+		super(id, targetWindow, editorGroupsContainer, contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, editorGroupService, editorService, menuService, keybindingService, logService);
 
 		this.bigSurOrNewer = isBigSurOrNewer(environmentService.os.release);
 	}
@@ -287,9 +289,10 @@ export class MainNativeTitlebarPart extends NativeTitlebarPart {
 		@IEditorGroupsService editorGroupService: IEditorGroupsService,
 		@IEditorService editorService: IEditorService,
 		@IMenuService menuService: IMenuService,
-		@IKeybindingService keybindingService: IKeybindingService
+		@IKeybindingService keybindingService: IKeybindingService,
+		@ILogService logService: ILogService
 	) {
-		super(Parts.TITLEBAR_PART, mainWindow, 'main', contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, nativeHostService, editorGroupService, editorService, menuService, keybindingService);
+		super(Parts.TITLEBAR_PART, mainWindow, 'main', contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, nativeHostService, editorGroupService, editorService, menuService, keybindingService, logService);
 	}
 }
 
@@ -316,10 +319,11 @@ export class AuxiliaryNativeTitlebarPart extends NativeTitlebarPart implements I
 		@IEditorGroupsService editorGroupService: IEditorGroupsService,
 		@IEditorService editorService: IEditorService,
 		@IMenuService menuService: IMenuService,
-		@IKeybindingService keybindingService: IKeybindingService
+		@IKeybindingService keybindingService: IKeybindingService,
+		@ILogService logService: ILogService		
 	) {
 		const id = AuxiliaryNativeTitlebarPart.COUNTER++;
-		super(`workbench.parts.auxiliaryTitle.${id}`, getWindow(container), editorGroupsContainer, contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, nativeHostService, editorGroupService, editorService, menuService, keybindingService);
+		super(`workbench.parts.auxiliaryTitle.${id}`, getWindow(container), editorGroupsContainer, contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, nativeHostService, editorGroupService, editorService, menuService, keybindingService, logService);
 	}
 
 	override get preventZoom(): boolean {

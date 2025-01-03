@@ -55,6 +55,7 @@ import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { safeIntl } from '../../../../base/common/date.js';
 import { TitleBarVisibleContext } from '../../../common/contextkeys.js';
+import { ILogService } from '../../../../platform/log/common/log.js';
 
 export interface ITitleVariable {
 	readonly name: string;
@@ -311,7 +312,8 @@ export class BrowserTitlebarPart extends Part implements ITitlebarPart {
 		@IEditorGroupsService private readonly editorGroupService: IEditorGroupsService,
 		@IEditorService editorService: IEditorService,
 		@IMenuService private readonly menuService: IMenuService,
-		@IKeybindingService private readonly keybindingService: IKeybindingService
+		@IKeybindingService private readonly keybindingService: IKeybindingService,
+		@ILogService private readonly logService: ILogService
 	) {
 		super(id, { hasTitle: false }, themeService, storageService, layoutService);
 
@@ -696,7 +698,7 @@ private createCodestoryAccountActionToolBar() {
 					() => true,
 				);
 			}
-
+			this.logService.info('this.codestoryAccountMenu?.getActions()', this.codestoryAccountMenu?.getActions());
 			// --- Layout Actions
 			if (this.layoutToolbarMenu) {
 				fillInActionBarActions(
@@ -709,6 +711,7 @@ private createCodestoryAccountActionToolBar() {
 			this.actionToolBar.setActions(prepareActions(actions.primary), prepareActions(actions.secondary));
 			this.secondaryActionToolBar.setActions(prepareActions(globalActions.primary), prepareActions(globalActions.secondary));
 			this.codestoryAccountActionToolBar.setActions(prepareActions(csAccountActions.primary), prepareActions(csAccountActions.secondary));
+			this.logService.info('codestoryAccountActionToolBar', this.codestoryAccountActionToolBar);
 		};
 
 		// Create/Update the menus which should be in the title tool bar
@@ -752,6 +755,7 @@ private createCodestoryAccountActionToolBar() {
 			}
 		}
 		this.codestoryAccountMenu = this.menuService.createMenu(MenuId.CodestoryAccountMenu, this.contextKeyService);
+		this.logService.info('codestoryAccountMenu', this.codestoryAccountMenu);
 		this.codestoryAccountMenuDisposables.add(this.codestoryAccountMenu);
 		this.codestoryAccountMenuDisposables.add(this.codestoryAccountMenu.onDidChange(() => updateToolBarActions()));
 
@@ -911,8 +915,9 @@ export class MainBrowserTitlebarPart extends BrowserTitlebarPart {
 		@IEditorService editorService: IEditorService,
 		@IMenuService menuService: IMenuService,
 		@IKeybindingService keybindingService: IKeybindingService,
+		@ILogService logService: ILogService
 	) {
-		super(Parts.TITLEBAR_PART, mainWindow, 'main', contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, editorGroupService, editorService, menuService, keybindingService);
+		super(Parts.TITLEBAR_PART, mainWindow, 'main', contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, editorGroupService, editorService, menuService, keybindingService, logService);
 	}
 }
 
@@ -944,9 +949,10 @@ export class AuxiliaryBrowserTitlebarPart extends BrowserTitlebarPart implements
 		@IEditorService editorService: IEditorService,
 		@IMenuService menuService: IMenuService,
 		@IKeybindingService keybindingService: IKeybindingService,
+		@ILogService logService: ILogService
 	) {
 		const id = AuxiliaryBrowserTitlebarPart.COUNTER++;
-		super(`workbench.parts.auxiliaryTitle.${id}`, getWindow(container), editorGroupsContainer, contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, editorGroupService, editorService, menuService, keybindingService);
+		super(`workbench.parts.auxiliaryTitle.${id}`, getWindow(container), editorGroupsContainer, contextMenuService, configurationService, environmentService, instantiationService, themeService, storageService, layoutService, contextKeyService, hostService, editorGroupService, editorService, menuService, keybindingService, logService);
 	}
 
 	override get preventZoom(): boolean {
